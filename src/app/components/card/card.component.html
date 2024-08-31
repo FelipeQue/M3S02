@@ -2,24 +2,24 @@
     <div class="card-innerbox">
 
     <div class="card-header">
-    <h3>Tipo</h3>
+    <h3>{{data.type}}</h3>
     </div>
 
     <div class="card-name">
-    <h2>Nome do carro</h2>
+    <h2>{{data.name}}</h2>
     <div><fa-icon [icon]="faHeart"></fa-icon></div>
     </div>
-    <div class="card-img"><img src="https://loremflickr.com/640/480/transport" alt="Car photo"></div>
+    <div class="card-img"><img [src]=data.image alt="Car photo"></div>
     
 
     <div class="card-info-line" id="card-first-info">
         <h4 class="card-info">Ano</h4>
-        <h4 class="card-info">2007</h4>
+        <h4 class="card-info">{{getYear(data.year)}}</h4>
     </div>
 
     <div class="card-info-line">
-        <h4 class="card-info">Preço</h4>
-        <h4 class="card-info">180</h4>
+        <h4 class="card-info">Diária</h4>
+        <h4 class="card-info">{{data.pricePerDay}}</h4>
     </div>
 
     <div class="card-footer">

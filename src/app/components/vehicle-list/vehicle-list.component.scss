@@ -2,9 +2,14 @@
 
 .vehicle-list-page {
     background-image: $wood;
-    height: 100vh;
+    height: auto;
     left: 0;
     right: 0;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    padding-top: 180px;
+    padding-bottom: 100px;
+    
 }
 
 #vehicle-rendered-list {
@@ -13,4 +18,7 @@
     align-items: center;
     align-self: center;
     justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 40px
 }

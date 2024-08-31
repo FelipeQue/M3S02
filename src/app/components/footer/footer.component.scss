@@ -1,0 +1,40 @@
+@import '../../../assets/styles/variables';
+
+.footer {
+    font-family: "Nunito", sans serif;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #f0f0f0;
+    background-image: $graphPaper;
+    box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+
+
+
+    a {
+        color: $link;
+        text-decoration: none;
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+        &:visited {
+            color: $link;
+            &:hover {
+                color: $hover;
+            }
+            &:active {
+                color: $active;
+            }
+        }
+    }
+}

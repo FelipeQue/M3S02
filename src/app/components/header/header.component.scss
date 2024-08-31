@@ -1,0 +1,73 @@
+@import '../../../assets/styles/variables';
+
+.header {
+    font-family: "Nunito", sans serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    background-image: $graphPaper;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        color: $link;
+        text-decoration: none;
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+        &:visited {
+            color: $link;
+            &:hover {
+                color: $hover;
+            }
+            &:active {
+                color: $active;
+            }
+        }
+    }
+
+}
+
+
+#header-left {
+    width: 100%;
+}
+
+#header-logo {
+    margin-left: 30px;
+    margin-top: 5px;
+    width: 50%;
+}
+
+
+#header-right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+#favorite-count {
+    padding-right: 1em;
+    font-size: 1.2em;
+}
+
+.header-menu {
+    display: flex;
+    padding: 1em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}

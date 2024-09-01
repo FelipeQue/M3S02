@@ -6,7 +6,7 @@
     <!-- @for (vehicle of vehicles; let i = $index; track i){ -->
 
     @for (vehicle of vehicles; track vehicle.id){
-<app-card [data]="vehicle"></app-card>
+<app-card [data]="vehicle" (click)="redirectToDetail(vehicle.id)"></app-card>
 }
 </div>
 

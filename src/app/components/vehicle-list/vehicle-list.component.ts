@@ -35,7 +35,9 @@ export class VehicleListComponent {
     })
   }
 
-
+  redirectToDetail(id: number){
+    this.router.navigate(["vehicle", id]);
+  }
 
 
 }

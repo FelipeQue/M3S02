@@ -15,4 +15,8 @@ export class VehicleService {
     return this.httpClient.get(`${this.url}/vehicles`);
   }
 
+  getById(id: number){
+    return this.httpClient.get(`${this.url}/vehicles/${id}`);
+  }
+
 }

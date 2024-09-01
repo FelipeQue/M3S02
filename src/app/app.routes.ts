@@ -5,13 +5,13 @@ import { VehicleDetailComponent } from './components/vehicle-detail/vehicle-deta
 export const routes: Routes = [
     {
         path: "",
-        redirectTo: "/vehiclelist",
+        redirectTo: "/vehicle/list",
         pathMatch: "full"
     },
     {
-        path: "vehiclelist",
+        path: "vehicle",
         children: [
-            { path: "",component: VehicleListComponent },
+            { path: "list",component: VehicleListComponent },
             { path: ":id", component: VehicleDetailComponent },
         ],
     },

@@ -1,7 +1,44 @@
 
 <div class="vehicle-detail-page">
 
+<div id="detail-container">
 
-Teste
+<div id="detail-tophalf">
 
-</div>>
+<div id="detail-topleft">
+    <img [src]=vehicle.image alt="Car photo">
+</div>
+
+<div id="detail-topright">
+<div id="favourite"><fa-icon [icon]="faHeart"></fa-icon></div>
+<div id="vehicle-name"><h2>{{vehicle.name}}</h2></div>
+<div id="vehicle-type"><h3>{{vehicle.type}}</h3></div>
+<div id="vehicle-info">
+
+    <div class="card-info-line" id="card-first-info">
+        <h4 class="card-info">Ano</h4>
+        <h4 class="card-info">{{getYear(vehicle.year)}}</h4>
+    </div>
+
+    <div class="card-info-line">
+        <h4 class="card-info">Diária</h4>
+        <h4 class="card-info">{{vehicle.pricePerDay}}</h4>
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div id="detail-bottomhalf">
+<div id="description">{{vehicle.description}}</div>
+<div id="rent-button">Alugar</div>
+
+</div>
+
+</div>
+
+
+</div>

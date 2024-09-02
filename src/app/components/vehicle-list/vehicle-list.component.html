@@ -1,6 +1,14 @@
 
 <div class="vehicle-list-page">
 
+<div id="vehicle-search-container">
+        <p>Busque o veículo por modelo ou tipo no campo abaixo:</p>
+        <form id="vehicle-form" (ngSubmit)="searchVehicle()" [formGroup]="vehicleSearch">
+        <input type="text" formControlName="searchInput">
+        <button type="submit">Pesquisar</button>
+        </form>
+</div>
+
 <div id="vehicle-rendered-list">
 
     <!-- @for (vehicle of vehicles; let i = $index; track i){ -->

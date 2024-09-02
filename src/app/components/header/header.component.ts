@@ -13,5 +13,11 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
 
   faHeart = faHeart;
+  favoriteCount: number = 0;
+
+  ngOnInit(): void {
+    let favorites = JSON.parse(localStorage.getItem('favoritos') || "[]");
+    this.favoriteCount = favorites.length;
+  }
 
 }

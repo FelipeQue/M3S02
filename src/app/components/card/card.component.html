@@ -7,7 +7,11 @@
 
     <div class="card-name">
     <h2>{{data.name}}</h2>
-    <div><fa-icon [icon]="faHeart"></fa-icon></div>
+    <div>
+        @if (data.favorite) {
+            <fa-icon [icon]="faHeart"></fa-icon>
+        }
+    </div>
     </div>
     <div class="card-img"><img [src]=data.image alt="Car photo"></div>
     

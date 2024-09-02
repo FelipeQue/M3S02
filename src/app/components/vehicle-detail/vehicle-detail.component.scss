@@ -46,10 +46,29 @@
     justify-content: space-between;
 }
 
-#favourite {
+#favorite-area {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+#favorite-button{
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 50%;
+}
+
+.is-favorite {
+    color: black;
+    background-color: #FFB703;
+    border: 2px solid black;
+}
+
+.not-favorite {
+    background: none;
+    color: black;
+    border: 2px dotted black;
+    opacity: 0.4;
 }
 
 #card-name {
@@ -123,7 +142,7 @@
     padding-left: 1.5em;
     padding-right: 1.5em;
     background-color: #FFB703;
-    border: 1px solid black;
+    border: 2px solid black;
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: bold;

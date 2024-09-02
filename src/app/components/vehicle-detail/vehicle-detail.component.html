@@ -10,7 +10,15 @@
 </div>
 
 <div id="detail-topright">
-<div id="favourite"><fa-icon [icon]="faHeart"></fa-icon></div>
+<div id="favorite-area">
+    @if (isFavorite) {
+        <button class="is-favorite" id="favorite-button" (click)="toggleFavorites()"><fa-icon [icon]="faHeart"></fa-icon></button>
+    }
+    @else {
+        <button class="not-favorite" id="favorite-button" (click)="toggleFavorites()"><fa-icon [icon]="faHeart"></fa-icon></button>
+    }
+    
+</div>
 <div id="vehicle-name"><h2>{{vehicle.name}}</h2></div>
 <div id="vehicle-type"><h3>{{vehicle.type}}</h3></div>
 <div id="vehicle-info">

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FavoriteCountService } from '../../services/favorite-count.service';
 
 @Component({
   selector: 'app-vehicle-detail',
@@ -18,9 +19,12 @@ export class VehicleDetailComponent {
   vehicleService = inject(VehicleService);
   activatedRoute = inject(ActivatedRoute);
   datePipe = inject(DatePipe);
+  favoriteCountService = inject(FavoriteCountService);
+
   faHeart = faHeart;
   vehicle: any = {};
   isFavorite: boolean = false;
+  storageKey: string = 'favoritos';
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
@@ -38,12 +42,12 @@ export class VehicleDetailComponent {
   }
 
   checkIsFavorite(): void {
-    let storage = localStorage.getItem('favoritos'); 
+    let storage = localStorage.getItem(this.storageKey); 
     if(storage){ 
       let favorites = JSON.parse(storage);
       this.isFavorite = favorites.some((favorite: any)=>favorite.id == this.vehicle.id);
     } else{
-      localStorage.setItem('favoritos', "[]");
+      localStorage.setItem(this.storageKey, "[]");
       this.isFavorite = false;
     }
   }
@@ -53,7 +57,7 @@ export class VehicleDetailComponent {
   }
 
   toggleFavorites(): void{
-    let storage = localStorage.getItem('favoritos'); 
+    let storage = localStorage.getItem(this.storageKey); 
     if(storage){ 
       let favorites = JSON.parse(storage);
       if (this.isFavorite){
@@ -65,7 +69,8 @@ export class VehicleDetailComponent {
         this.isFavorite = true;
         alert("Veículo adicionado à lista de favoritos!");
       }
-      localStorage.setItem('favoritos', JSON.stringify(favorites));
+      localStorage.setItem(this.storageKey, JSON.stringify(favorites));
+      this.favoriteCountService.updateFavoriteCount();
     }
   }
 

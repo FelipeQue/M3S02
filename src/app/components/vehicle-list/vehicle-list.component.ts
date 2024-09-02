@@ -13,10 +13,12 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class VehicleListComponent {
 
-  vehicles: any = [];
-  searchResults: any = [];
   vehiclesService = inject(VehicleService);
   router = inject(Router);
+
+  vehicles: any = [];
+  searchResults: any = [];
+  storageKey: string = 'favoritos';
 
   vehicleSearch = new FormGroup({
     searchInput: new FormControl('')
@@ -25,7 +27,7 @@ export class VehicleListComponent {
   ngOnInit(){
     this.vehiclesService.list().subscribe({
       next: (data: any)=>{
-        let favorites = JSON.parse(localStorage.getItem('favoritos') || "[]");
+        let favorites = JSON.parse(localStorage.getItem(this.storageKey) || "[]");
         data.forEach((element:any) => {
           let isFavorite = favorites.some((favorite:any)=>favorite.id === element.id);
           if(isFavorite){

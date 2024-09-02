@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink } from '@angular/router';
+import { FavoriteCountService } from '../../services/favorite-count.service';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +13,15 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
 
-  faHeart = faHeart;
+  favoriteCountService = inject(FavoriteCountService);
   favoriteCount: number = 0;
+  faHeart = faHeart;
 
   ngOnInit(): void {
-    let favorites = JSON.parse(localStorage.getItem('favoritos') || "[]");
-    this.favoriteCount = favorites.length;
+    this.favoriteCountService.favoriteAmount$.subscribe(amount => {
+      this.favoriteCount = amount;
+    });
+    this.favoriteCountService.updateFavoriteCount();
   }
 
 }

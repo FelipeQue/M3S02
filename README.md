@@ -1,4 +1,13 @@
-# M3S02
+# M3S02 / Car Rental
+
+Floripa Mais Tec (FMT) 2024, Módulo 3, semana 2 / Module 3, week 2.
+
+Chamei o resultado do meu exercício de Super Trunfo Car Rental (pois fiz o design inspirado no jogo Super Trunfo), trata-se de uma tela de site de aluguel de veículos. O objetivo do exercício foi revisar a chamada http do front-end, portanto utilizamos o mockAPI (mockapi.io) para "mockar" um back-end.
+
+<img width="1105" alt="Screenshot 2024-08-31 at 16 25 02" src="https://github.com/user-attachments/assets/1c30aeb4-430f-4cca-ad67-a8b9ce56a0d5">
+
+<img width="1023" alt="Screenshot 2024-09-02 at 02 47 01" src="https://github.com/user-attachments/assets/8f103cad-3f92-4231-8255-d29b58da3ec0">
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 
